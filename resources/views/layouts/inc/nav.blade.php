@@ -10,6 +10,9 @@
                 <li class="nav-item px-2">
                     <a href="{{ route('dashboard') }}" class="nav-link active">Dashboard</a>
                 </li>
+                <li class="nav-item px-2">
+                    <a href="{{ route('contacts.index') }}" class="nav-link active">Contacts</a>
+                </li>
             </ul>
 
             <ul class="navbar-nav ml-auto">
@@ -24,9 +27,6 @@
                         </a>
                         <a href="{{ url('user_infos') }}/{{ Auth::user()->id }}" class="dropdown-item">
                             <i class="fas fa-cog"></i> My Informations
-                        </a>
-                        <a href="{{ url('user_infos') }}/{{ Auth::user()->id }}" class="dropdown-item">
-                            <i class="fas fa-cog"></i> My Contacts
                         </a>
                     </div>
                 </li>

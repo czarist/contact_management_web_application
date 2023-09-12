@@ -7,7 +7,7 @@
         <div class="container mt-4">
             <div class="row justify-content-center">
                 <div class="col-12 center col-sm-6 col-md-6">
-                    <h1>Bem Vindo</h1>
+                    <h1>Users</h1>
                 </div>
                 <table class="table mt-5">
                     <thead class="thead-dark">

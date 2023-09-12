@@ -9,41 +9,41 @@
                     <form class="form-container">
 
                         @csrf
-                        <h2 class="text-center bg-dark p-2 text-white">Cadastrar Endereço</h2>
+                        <h2 class="text-center bg-dark p-2 text-white">Register Address</h2>
                         <input type="hidden" name="user_id" id="user_id" value="{{ $id }}">
                         <input type="hidden" id="url" name="url"
-                            value="{{ isset($address['logradouro']) ? '/update_address' : '/save_address' }}">
+                            value="{{ isset($address['street']) ? '/update_address' : '/save_address' }}">
 
                         <div class="form-group">
-                            <label for="logradouro">Logradouro</label>
-                            <input type="text" name="logradouro" class="form-control" id="logradouro"
-                                placeholder="Seu Logradouro"
-                                value="{{ isset($address['logradouro']) ? $address['logradouro'] : '' }}">
+                            <label for="street">Street</label>
+                            <input type="text" name="street" class="form-control" id="street" placeholder="Street"
+                                value="{{ isset($address['street']) ? $address['street'] : '' }}">
                         </div>
 
                         <div class="form-group">
-                            <label for="numero">Número</label>
-                            <input type="text" name="numero" class="form-control" id="numero" placeholder="Número"
-                                value="{{ isset($address['numero']) ? $address['numero'] : '' }}">
+                            <label for="number">Number</label>
+                            <input type="text" name="number" class="form-control" id="number" placeholder="Number"
+                                value="{{ isset($address['number']) ? $address['number'] : '' }}">
                         </div>
 
                         <div class="form-group">
-                            <label for="bairro">Bairro</label>
-                            <input type="text" class="form-control" name="bairro" id="bairro" placeholder="Bairro"
-                                value="{{ isset($address['bairro']) ? $address['bairro'] : '' }}">
+                            <label for="neighborhood">Neighborhood</label>
+                            <input type="text" class="form-control" name="neighborhood" id="neighborhood"
+                                placeholder="Neighborhood"
+                                value="{{ isset($address['neighborhood']) ? $address['neighborhood'] : '' }}">
                         </div>
 
                         <div class="form-group">
-                            <label for="complemento">Complemento</label>
-                            <input type="text" name="complemento" class="form-control" id="complemento"
-                                placeholder="Complemento"
-                                value="{{ isset($address['complemento']) ? $address['complemento'] : '' }}">
+                            <label for="complement">Complement</label>
+                            <input type="text" name="complement" class="form-control" id="complement"
+                                placeholder="Complement"
+                                value="{{ isset($address['complement']) ? $address['complement'] : '' }}">
                         </div>
 
                         <div class="form-group">
-                            <label for="cep">CEP</label>
-                            <input type="text" name="cep" class="form-control" id="cep" placeholder="CEP"
-                                value="{{ isset($address['cep']) ? $address['cep'] : '' }}">
+                            <label for="zip_code">Zip Code</label>
+                            <input type="text" name="zip_code" class="form-control" id="zip_code" placeholder="Zip Code"
+                                value="{{ isset($address['zip_code']) ? $address['zip_code'] : '' }}">
                         </div>
 
                         <button id="save_form" type="submit" class="btn btn-dark btn-block save_btn">Submit</button>
@@ -60,11 +60,11 @@
         $(document).ready(function() {
             $('#save_form').on('click', function(e) {
                 e.preventDefault();
-                var logradouro = $("#logradouro").val();
-                var numero = $("#numero").val();
-                var bairro = $("#bairro").val();
-                var complemento = $("#complemento").val();
-                var cep = $("#cep").val();
+                var street = $("#street").val();
+                var number = $("#number").val();
+                var neighborhood = $("#neighborhood").val();
+                var complement = $("#complement").val();
+                var zip_code = $("#zip_code").val();
                 var url = $("#url").val();
                 var user_id = $("#user_id").val();
 
@@ -73,11 +73,11 @@
                     url: url,
                     data: {
                         '_token': '<?= csrf_token() ?>',
-                        logradouro: logradouro,
-                        numero: numero,
-                        bairro: bairro,
-                        complemento: complemento,
-                        cep: cep,
+                        street: street,
+                        number: number,
+                        neighborhood: neighborhood,
+                        complement: complement,
+                        zip_code: zip_code,
                         user_id: user_id
                     },
                     success: function(data) {
@@ -95,11 +95,11 @@
                             setTimeout(() => {
                                 $('#notifDiv').fadeOut();
                             }, 3000);
-                            // $('[name="logradouro"]').val('');
-                            // $('[name="numero"]').val('');
-                            // $('[name="bairro"]').val('');
-                            // $('[name="complemento"]').val('');
-                            // $('[name="cep"]').val('');
+                            // $('[name="street"]').val('');
+                            // $('[name="number"]').val('');
+                            // $('[name="neighborhood"]').val('');
+                            // $('[name="complement"]').val('');
+                            // $('[name="zip_code"]').val('');
                         } else {
                             $('#notifDiv').fadeIn();
                             $('#notifDiv').css('background', 'red');
