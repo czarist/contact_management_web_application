@@ -15,12 +15,12 @@ class addressController extends Controller
 
         if (Auth::user()->id == $id || $loggedRoleUser == '4') {
 
-            $address= address::where('user_id', $id)->get();
+            $address = address::where('user_id', $id)->get();
 
             if (empty($address->toArray())) {
-                $address= "";
+                $address = "";
             } else {
-                $address= $address->toArray()[0];
+                $address = $address->toArray()[0];
             }
             return view('pages.register_address', compact('address', 'id'));
         } else {
@@ -30,7 +30,7 @@ class addressController extends Controller
 
     public function save_address(Request $request)
     {
-        $address= new address;
+        $address = new address;
         $address->street = $request['street'];
         $address->number = $request['number'];
         $address->neighborhood = $request['neighborhood'];
@@ -44,15 +44,23 @@ class addressController extends Controller
 
     public function update_address(Request $request)
     {
-        $address= address::find(auth()->id());
+        $user_id = $request['user_id'];
+        $address = Address::where('user_id', $user_id)->first();
+    
+        if (!$address) {
+            return response()->json(['error' => 'Address not found for this user.']);
+        }
+    
         $address->street = $request['street'];
         $address->number = $request['number'];
         $address->neighborhood = $request['neighborhood'];
         $address->complement = $request['complement'];
         $address->zip_code = $request['zip_code'];
-        $address->user_id = $request['user_id'];
-
+        $address->user_id = $user_id;
+    
         $address->save();
-        return response()->json(['success' => 'addressupdated successfully!']);
+    
+        return response()->json(['success' => 'Address updated successfully!']);
     }
+    
 }

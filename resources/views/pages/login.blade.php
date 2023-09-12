@@ -23,7 +23,7 @@
 
                                 <button type="submit" class="btn btn-dark btn-block" id="loginBtn">LOGIN</button>
 
-                                <a class="btn btn-dark btn-block" href="{{ url('register') }}">Não Tenho Cadastro</a>
+                                <a class="btn btn-dark btn-block" href="{{ url('register') }}">CREATE REGISTRATION </a>
                             </form>
                         </div>
                     </div>

@@ -12,7 +12,7 @@
                         <h2 class="text-center bg-dark p-2 text-white">Register Address</h2>
                         <input type="hidden" name="user_id" id="user_id" value="{{ $id }}">
                         <input type="hidden" id="url" name="url"
-                            value="{{ isset($address['street']) ? '/update_address' : '/save_address' }}">
+                            value="{{ isset($address['user_id']) ? '/update_address' : '/save_address' }}">
 
                         <div class="form-group">
                             <label for="street">Street</label>
@@ -68,6 +68,7 @@
                 var url = $("#url").val();
                 var user_id = $("#user_id").val();
 
+                console.log(street)
                 $.ajax({
                     type: 'POST',
                     url: url,
@@ -78,7 +79,7 @@
                         neighborhood: neighborhood,
                         complement: complement,
                         zip_code: zip_code,
-                        user_id: user_id
+                        user_id: user_id,
                     },
                     success: function(data) {
                         if (data.exists) {

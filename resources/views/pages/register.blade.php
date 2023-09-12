@@ -6,7 +6,7 @@
                 <div class="col-md-6 mx-auto">
                     <div class="card">
                         <div class="card-header bg-dark text-white">
-                            <h4 class="text-center">Registro de Conta</h4>
+                            <h4 class="text-center">Create User</h4>
                         </div>
                         <div class="card-body">
                             <form>
@@ -36,14 +36,14 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="password">Senha</label>
+                                    <label for="password">Password</label>
                                     <input type="password" id="password" name="password" class="form-control"
-                                        placeholder="Senha">
+                                        placeholder="Password">
                                 </div>
 
-                                <button type="submit" class="btn btn-dark btn-block" id="save_form">Registrar</button>
+                                <button type="submit" class="btn btn-dark btn-block" id="save_form">Register</button>
                             </form>
-                            <a class="btn btn-dark btn-block mt-5" href="{{ url('login') }}">Já Tenho Cadastro</a>
+                            <a class="btn btn-dark btn-block mt-5" href="{{ url('login') }}">I am already registered </a>
 
                         </div>
                     </div>

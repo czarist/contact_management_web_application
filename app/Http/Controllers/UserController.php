@@ -84,7 +84,7 @@ class UserController extends Controller
             $user->password = bcrypt($request['password']);
         }
         $user->save();
-        return response()->json(['success' => 'Usuário registrado com sucesso']);
+        return response()->json(['success' => 'User registered successfully']);
     }
 
 
@@ -97,7 +97,7 @@ class UserController extends Controller
             $user->delete();
             return response()->json(['success' => 'Usuário excluído com sucesso']);
         } else {
-            return response()->json(['error' => 'Usuário não encontrado']);
+            return response()->json(['error' => 'User not found']);
         }
     }
 

@@ -8,7 +8,7 @@
                 <div class="col-md-6 mx-auto">
                     <div class="card">
                         <div class="card-header bg-dark text-white">
-                            <h4 class="text-center">Update My Infos</h4>
+                            <h4 class="text-center">Update User's Info - {{ isset($user['fname']) ? $user['fname'] : '' }}</h4>
                         </div>
                         <div class="card-body">
                             <form>
@@ -39,9 +39,9 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="password">Senha</label>
+                                    <label for="password">Password</label>
                                     <input type="password" id="password" name="password" class="form-control"
-                                        placeholder="**************************">
+                                        placeholder="Password">
                                 </div>
 
                                 <button type="submit" class="btn btn-dark btn-block" id="save_form">Update</button>
