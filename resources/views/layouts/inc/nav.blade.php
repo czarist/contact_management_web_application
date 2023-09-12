@@ -21,10 +21,10 @@
                         <i class="fas fa-user"></i> Welcome {{ Auth::user()->toArray()['fname'] }}
                     </a>
                     <div class="dropdown-menu">
-                        <a href="{{ route('address', ['id' => Auth::user()->id]) }}" class="dropdown-item">
+                        {{-- <a href="{{ route('address', ['id' => Auth::user()->id]) }}" class="dropdown-item">
                             <i class="fas fa-user-circle"></i>
                             My address
-                        </a>
+                        </a> --}}
                         <a href="{{ url('user_infos') }}/{{ Auth::user()->id }}" class="dropdown-item">
                             <i class="fas fa-cog"></i> My Informations
                         </a>
