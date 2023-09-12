@@ -31,10 +31,10 @@
                                 <td>{{ $user['phone'] }}</td>
                                 <td>
                                     @if (Auth::user()->toArray()['role'] == 4)
-                                        <button type="button" class="btn btn-success"
+                                        {{-- <button type="button" class="btn btn-success"
                                             onclick="window.location.replace('{{ route('address', ['id' => $user['id']]) }}');">
                                             <i class="fas fa-home white"></i>
-                                        </button>
+                                        </button> --}}
                                         <button type="button" class="btn btn-primary"
                                             onclick="window.location.replace('{{ url('user_infos') }}/{{ $user['id'] }}');">
                                             <i class="fas fa-edit white"></i>

@@ -1,4 +1,4 @@
-# Simple user admin application using laravel api
+# Simple CRUD application using laravel 
 
 ### Requirements
 

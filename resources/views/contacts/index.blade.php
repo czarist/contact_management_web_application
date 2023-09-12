@@ -13,7 +13,7 @@
 
             <div class="col-md-12 mt-5">
                 <div class="card">
-                    <div class="card-header">Public Contact List</div>
+                    <div class="card-header">Global Public Contact List</div>
 
                     <div class="card-body">
                         <table class="table table-striped">
@@ -47,7 +47,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Private Contact List</div>
+                    <div class="card-header">My Contact List</div>
 
                     <div class="card-body">
                         <table class="table table-striped">

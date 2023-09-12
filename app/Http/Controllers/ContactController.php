@@ -30,6 +30,14 @@ class ContactController extends Controller
             return redirect()->route('contacts.create')->with('error', 'Email already exists.');
         }
 
+        // $request->validate([
+        //     'name' => 'required|string|min:5',
+        //     'contact' => 'required|string|min:9',
+        //     'email' => 'required|string|email',
+        //     'public' => 'required|boolean',
+        //     'user_id' => 'required|integer',
+        // ]);
+
         try {
             $contact = new Contact([
                 'name' => $request->input('name'),
@@ -71,7 +79,7 @@ class ContactController extends Controller
 
         $request->validate([
             'name' => 'required|string|min:5',
-            'contact' => 'required|string|digits:9',
+            'contact' => 'required|string|min:9',
             'email' => 'required|string|email',
             'public' => 'required|boolean',
             'user_id' => 'required|integer',
