@@ -14,8 +14,9 @@
     4. Go to project root folder.Open git bash or terminal and run composer install       
     5. Run php artisan key:generate in the terminal  
     6. Create a database in localhost named "laravel_contacts"
-    7. Run php artisan migrate --seed 
-    8. Run php artisan serve
+    7. Run php artisan migrate 
+    8. Run php artisan migrate:fresh --seed 
+    9. Run php artisan serve
    
     
 ### Admin Login 
